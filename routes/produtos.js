@@ -1,18 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
+// Retorna todos os produtos
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        mensagem: 'Usando o GET na rota de produtos'
+        mensagem: 'Obtendo um produto'
     });
 });
 
+// Insere um produto
 router.post('/', (req, res, next) => {
     res.status(201).send({
         mensagem: 'Usando o POST na rota de produtos'
     });
 });
 
+// Retorno os dados de um produto específico
 router.get('/:id_produto', (req, res, next) => {
     const id = req.params.id_produto
 
@@ -28,6 +31,19 @@ router.get('/:id_produto', (req, res, next) => {
     }
 });
 
+// Altera dados de um produto específico
+router.patch('/', (req, res, next) => {
+    res.status(200).send({
+        mensagem: 'Usando o PATCH na rota de produtos'
+    });
+});
+
+// Deleta um produto específico
+router.delete('/', (req, res, next) => {
+    res.status(200).send({
+        mensagem: 'Usando o DELETE na rota de produtos'
+    });
+});
 
 
 module.exports = router;
