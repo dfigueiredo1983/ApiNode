@@ -10,6 +10,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false })); // apenas dados simples
 app.use(bodyParser.json()); // json como arquivo de entrada
 
+//tratando CORS
 app.use((req, res, next) => {
     res.header('Acces-Control-Allow-Origin', '*');
     res.header(
