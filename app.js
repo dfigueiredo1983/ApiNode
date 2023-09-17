@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 app.use('/produtos', rotaProdutos);
 app.use('/pedidos', rotaPedidos);
 
+//rota em caso de erro, endereço inválido
 app.use((req, res, next) => {
     const erro = new Error('Endereço não encontrado!');
     erro.status = 404;
